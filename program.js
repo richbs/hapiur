@@ -7,14 +7,23 @@ server.connection({
 });
 
 function index(request, reply) {
-  console.log(request);
   reply('Hello hapi');
+}
+
+function name(request, reply) {
+  reply('Hello ' + request.params.name);
 }
 
 server.route({
   path: '/',
   method: 'GET',
   handler: index
+});
+
+server.route({
+  path: '/{name}',
+  method: 'GET',
+  handler: name
 });
 
 
