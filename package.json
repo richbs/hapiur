@@ -1,0 +1,19 @@
+{
+  "name": "hapiur",
+  "version": "1.0.0",
+  "description": "",
+  "main": "program.js",
+  "dependencies": {
+    "hap": "^2.1.0",
+    "hapi": "^13.0.0",
+    "makemehapi": "^5.0.0"
+  },
+  "devDependencies": {
+    "makemehapi": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
