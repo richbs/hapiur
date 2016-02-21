@@ -1,9 +1,18 @@
+'use strict';
+
 var Hapi = require('hapi');
+var Inert = require('inert');
+var Path = require('path');
+
 var server = new Hapi.Server();
 
 server.connection({
   host: 'localhost',
   port: Number(process.argv[2] || 8080)
+});
+
+server.register(Inert, function (err) {
+    if (err) throw err;
 });
 
 function index(request, reply) {
@@ -17,7 +26,9 @@ function name(request, reply) {
 server.route({
   path: '/',
   method: 'GET',
-  handler: index
+  handler: {
+    file: Path.join(__dirname, 'index.html')
+  }
 });
 
 server.route({
